@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
+// Linked List Node
 struct ListNode {
     int val;
     ListNode* next;
@@ -19,7 +19,7 @@ public:
             return;
         }
 
-        
+        // Step 1: Find middle
         ListNode* slow = head;
         ListNode* fast = head;
 
@@ -28,7 +28,7 @@ public:
             fast = fast->next->next;
         }
 
-        
+        // Step 2: Reverse second half
         ListNode* prev = nullptr;
         ListNode* curr = slow->next;
 
@@ -58,7 +58,7 @@ public:
     }
 };
 
-
+// Print linked list
 void printList(ListNode* head) {
     while (head != nullptr) {
         cout << head->val;
@@ -72,7 +72,7 @@ void printList(ListNode* head) {
     cout << endl;
 }
 
-
+// Main function
 int main() {
     // Create linked list: 1 -> 2 -> 3 -> 4 -> 5
     ListNode* head = new ListNode(1);
@@ -90,7 +90,7 @@ int main() {
     cout << "Reordered List: ";
     printList(head);
 
-    
+    // Free memory
     while (head != nullptr) {
         ListNode* temp = head;
         head = head->next;
